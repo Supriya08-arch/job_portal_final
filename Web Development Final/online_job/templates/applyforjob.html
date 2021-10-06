@@ -1,57 +1,57 @@
-<!--{% load static %}-->
+{% load static %}
 
-<!--{% block body %}-->
+{% block body %}
 
-<!--{% include 'user_navigation.html' %}-->
-<!--<style>-->
-<!--    tr{text-align: center}-->
+{% include 'user_navigation.html' %}
+<style>
+    tr{text-align: center}
 
-<!--</style>-->
-
-
-<!--<marquee style="font-family:'Monotype-Corsiva'; font-size:25px; color:white; background-color:purple; font-weight:bold; margin-top:1%">-->
-<!-- Applying Job-->
-<!--</marquee>-->
-<!--<hr>-->
-
-<!--<div class="container shadow-lg py-2 mb-2">-->
-<!-- <form method="post" enctype="multipart/form-data">-->
-
-<!--  {% csrf_token %}-->
-
-<!--  <div class="form-row">-->
-<!--   <label class="font-weight-bold">Upload Resume</label>-->
-<!--   <input type="file" class="form-control" name="resume">-->
+</style>
 
 
-<!--  </div>-->
+<marquee style="font-family:'Monotype-Corsiva'; font-size:25px; color:white; background-color:purple; font-weight:bold; margin-top:1%">
+ Applying Job
+</marquee>
+<hr>
 
-<!--  <input type="submit" value="Submit" class="btn btn-danger mt-3">-->
+<div class="container shadow-lg py-2 mb-2">
+ <form method="post" enctype="multipart/form-data">
 
-<!-- </form>-->
-<!--</div>-->
+  {% csrf_token %}
 
-<!--{% ifequal error "close" %}-->
-<!--<script>-->
-<!--    alert("Application line are closed, last date is over");-->
-<!--    window.location = ('{% url 'user_latestjobs' %}')-->
-<!--</script>-->
+  <div class="form-row">
+   <label class="font-weight-bold">Upload Resume</label>
+   <input type="file" class="form-control" name="resume">
 
-<!--{% endifequal%}-->
-<!--{% ifequal error "notopen" %}-->
-<!--<script>-->
-<!--    alert("Application line are not Open");-->
-<!--    window.location = ('{% url 'user_latestjobs' %}')-->
-<!--</script>-->
 
-<!--{% endifequal%}-->
+  </div>
 
-<!--{% ifequal error "done" %}-->
-<!--<script>-->
-<!--    alert("Job Application Submitted Sucessfully");-->
-<!--    window.location = ('{% url 'user_latestjobs' %}')-->
-<!--</script>-->
+  <input type="submit" value="Submit" class="btn btn-danger mt-3">
 
-<!--{% endifequal%}-->
+ </form>
+</div>
 
-<!--{% endblock %}-->
+{% ifequal error "close" %}
+<script>
+    alert("Application line are closed, last date is over");
+    window.location = ('{% url 'user_latestjobs' %}')
+</script>
+
+{% endifequal%}
+{% ifequal error "notopen" %}
+<script>
+    alert("Application line are not Open");
+    window.location = ('{% url 'user_latestjobs' %}')
+</script>
+
+{% endifequal%}
+
+{% ifequal error "done" %}
+<script>
+    alert("Job Application Submitted Sucessfully");
+    window.location = ('{% url 'user_latestjobs' %}')
+</script>
+
+{% endifequal%}
+
+{% endblock %}
